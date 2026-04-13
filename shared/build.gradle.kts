@@ -33,7 +33,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.example.samplekmp.shared"
+    namespace = "com.twkim.samplekmp.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

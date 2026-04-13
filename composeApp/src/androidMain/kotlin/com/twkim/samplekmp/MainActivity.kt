@@ -1,4 +1,4 @@
-package com.example.samplekmp
+package com.twkim.samplekmp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            _root_ide_package_.com.twkim.samplekmp.App()
         }
     }
 }
@@ -21,5 +21,5 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    App()
+    _root_ide_package_.com.twkim.samplekmp.App()
 }

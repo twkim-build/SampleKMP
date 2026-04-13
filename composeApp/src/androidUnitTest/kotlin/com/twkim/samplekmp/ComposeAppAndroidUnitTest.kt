@@ -1,9 +1,9 @@
-package com.example.samplekmp
+package com.twkim.samplekmp
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-class SharedCommonTest {
+class ComposeAppAndroidUnitTest {
 
     @Test
     fun example() {
