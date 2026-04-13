@@ -2,32 +2,36 @@ import SwiftUI
 import Shared
 
 struct ContentView: View {
-    @State private var showContent = false
+    @State private var vm: UserViewModel
+    
+    init(vm: UserViewModel) {
+        _vm = State(initialValue: vm)
+    }
+    
     var body: some View {
-        VStack {
-            Button("Click me!") {
-                withAnimation {
-                    showContent = !showContent
-                }
+        VStack(spacing: 16) {
+            if vm.loading {
+                ProgressView()
+            } else if let errorMessage = vm.errorMessage {
+                Text("Error: \(errorMessage)")
+            } else {
+                Text(vm.name)
+                    .font(.headline)
+
+                Text(vm.email)
+                    .font(.subheadline)
             }
 
-            if showContent {
-                VStack(spacing: 16) {
-                    Image(systemName: "swift")
-                        .font(.system(size: 200))
-                        .foregroundColor(.accentColor)
-                    Text("SwiftUI: \(Greeting().greet())")
-                }
-                .transition(.move(edge: .top).combined(with: .opacity))
+            Button("Load User") {
+                vm.load()
             }
+            .buttonStyle(.borderedProminent)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
     }
 }
