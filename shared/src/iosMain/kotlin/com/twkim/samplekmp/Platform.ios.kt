@@ -7,4 +7,4 @@ class IOSPlatform: com.twkim.samplekmp.Platform {
 }
 
 actual fun getPlatform(): com.twkim.samplekmp.Platform =
-    _root_ide_package_.build.twkim.samplekmp.IOSPlatform()
+    _root_ide_package_.com.twkim.samplekmp.IOSPlatform()
