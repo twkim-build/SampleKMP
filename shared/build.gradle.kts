@@ -30,10 +30,13 @@ kotlin {
             implementation(libs.kotlin.test)
         }
     }
+    sourceSets.commonMain.dependencies {
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    }
 }
 
 android {
-    namespace = "com.example.samplekmp.shared"
+    namespace = "com.twkim.samplekmp.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
