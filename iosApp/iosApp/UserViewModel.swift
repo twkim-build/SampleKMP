@@ -11,33 +11,38 @@ import Shared
 @MainActor
 @Observable
 final class UserViewModel {
+    var isLoading = false
     var name = ""
     var email = ""
-    var loading = false
     var errorMessage: String?
     
-    private let presenter: UserPresenter
+    private let store: UserStore
     
-    init(presenter: UserPresenter) {
-        self.presenter = presenter
+    init(store: UserStore) {
+        self.store = store
+        
+        apply(state: store.currentState())
+
+        store.watchState { [weak self] state in
+            guard let self else { return }
+            Task { @MainActor in
+                self.apply(state: state)
+            }
+        }
     }
     
-    func load() {
-        loading = true
-        errorMessage = nil
-        
-        presenter.loadUser(
-            onSuccess: { user in
-                self.loading = false
-                self.name = user.name
-                self.email = user.email
-            },
-            onError: { error in
-                self.errorMessage = error
-            }
-        )
+    func loadUser() {
+        store.loadUser(userId: "123")
+    }
+    
+    private func apply(state: UserUiState) {
+        isLoading = state.isLoading
+        name = state.name
+        email = state.email
+        errorMessage = state.errorMessage
     }
     
     deinit {
+        store.clear()
     }
 }

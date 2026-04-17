@@ -7,7 +7,7 @@ struct iOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(
-                vm: UserViewModel(presenter: container.presenter)
+                vm: UserViewModel(store: container.userStore)
             )
         }
     }

@@ -10,20 +10,20 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 16) {
-            if vm.loading {
+            if vm.isLoading {
                 ProgressView()
             } else if let errorMessage = vm.errorMessage {
                 Text("Error: \(errorMessage)")
             } else {
-                Text(vm.name)
+                Text("Name: \(vm.name)")
                     .font(.headline)
 
-                Text(vm.email)
+                Text("Email: \(vm.email)")
                     .font(.subheadline)
             }
 
             Button("Load User") {
-                vm.load()
+                vm.loadUser()
             }
             .buttonStyle(.borderedProminent)
         }
