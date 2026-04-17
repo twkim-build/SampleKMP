@@ -9,6 +9,8 @@ import Foundation
 import Shared
 
 final class IOSContainer {
-    private let container = AppContainer()
-    lazy var presenter = container.createPresenter()
+    private let appContainer = AppContainer()
+    lazy var userStore: UserStore = {
+        appContainer.createUserStore()
+    }()
 }

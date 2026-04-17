@@ -5,8 +5,8 @@ import com.twkim.samplekmp.network.UserApi
 
 class UserRepositoryImpl(
     private val api: UserApi
-) {
-    suspend fun getUser(): User {
-        return api.getUser()
+) : UserRepository {
+    override suspend fun getUser(userId: String): User {
+        return api.getUser(userId)
     }
 }
