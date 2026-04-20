@@ -1,8 +1,7 @@
-package com.twkim.samplekmp.usecase
+package com.twkim.samplekmp.user.domain
 
 import com.twkim.samplekmp.model.User
-import com.twkim.samplekmp.repository.UserRepository
-import com.twkim.samplekmp.repository.UserRepositoryImpl
+import com.twkim.samplekmp.user.data.UserRepository
 
 class GetUserUseCase(
     private val repository: UserRepository

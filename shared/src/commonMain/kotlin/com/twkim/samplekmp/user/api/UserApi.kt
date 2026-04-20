@@ -1,4 +1,4 @@
-package com.twkim.samplekmp.network
+package com.twkim.samplekmp.user.api
 
 import com.twkim.samplekmp.model.User
 import kotlinx.coroutines.delay

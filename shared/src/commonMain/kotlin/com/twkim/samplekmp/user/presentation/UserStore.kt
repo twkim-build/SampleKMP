@@ -1,6 +1,6 @@
-package com.twkim.samplekmp.presentation
+package com.twkim.samplekmp.user.presentation
 
-import com.twkim.samplekmp.usecase.GetUserUseCase
+import com.twkim.samplekmp.user.domain.GetUserUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel

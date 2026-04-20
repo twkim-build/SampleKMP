@@ -1,4 +1,4 @@
-package com.twkim.samplekmp.repository
+package com.twkim.samplekmp.user.data
 
 import com.twkim.samplekmp.model.User
 

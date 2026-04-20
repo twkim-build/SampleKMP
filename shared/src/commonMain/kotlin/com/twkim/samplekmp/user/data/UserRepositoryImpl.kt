@@ -1,7 +1,7 @@
-package com.twkim.samplekmp.repository
+package com.twkim.samplekmp.user.data
 
 import com.twkim.samplekmp.model.User
-import com.twkim.samplekmp.network.UserApi
+import com.twkim.samplekmp.user.api.UserApi
 
 class UserRepositoryImpl(
     private val api: UserApi
