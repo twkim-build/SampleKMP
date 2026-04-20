@@ -24,10 +24,18 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation("io.ktor:ktor-client-core:3.4.2")
+            implementation("io.ktor:ktor-client-content-negotiation:3.4.2")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.4.2")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        androidMain.dependencies {
+            implementation("io.ktor:ktor-client-okhttp:3.4.2")
+        }
+        iosMain.dependencies {
+            implementation("io.ktor:ktor-client-darwin:3.4.2")
         }
     }
     sourceSets.commonMain.dependencies {
