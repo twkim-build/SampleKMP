@@ -6,9 +6,7 @@ struct iOSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(
-                vm: UserViewModel(store: container.userStore)
-            )
+            RootView(container: container)
         }
     }
 }

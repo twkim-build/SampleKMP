@@ -16,8 +16,13 @@ import com.twkim.samplekmp.user.domain.GetUserUseCase
 
 class AppContainer(
     environment: AppEnvironment,
-    tokenStorage: TokenStorage = PlatformTokenStorage()
+    tokenStorage: TokenStorage
 ) {
+    constructor(environment: AppEnvironment) : this (
+        environment,
+       PlatformTokenStorage()
+    )
+
     private val config = AppConfigFactory.create(environment)
 
     private val logger by lazy {
