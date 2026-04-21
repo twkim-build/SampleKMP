@@ -1,9 +1,12 @@
-package com.twkim.samplekmp.network
+package com.twkim.samplekmp.user.api
 
 import com.twkim.samplekmp.model.User
+import io.ktor.client.HttpClient
 import kotlinx.coroutines.delay
 
-class UserApi {
+class UserApi(
+    private val client: HttpClient
+) {
     suspend fun getUser(userId: String): User {
         delay(1000)
 

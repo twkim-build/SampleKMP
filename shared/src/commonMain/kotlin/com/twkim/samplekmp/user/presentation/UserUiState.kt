@@ -1,4 +1,4 @@
-package com.twkim.samplekmp.presentation
+package com.twkim.samplekmp.user.presentation
 
 data class UserUiState (
     val isLoading: Boolean = false,
