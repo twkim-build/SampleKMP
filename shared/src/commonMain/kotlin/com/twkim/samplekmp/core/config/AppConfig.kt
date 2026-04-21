@@ -4,5 +4,5 @@ data class AppConfig (
     val environment: AppEnvironment,
     val baseUrl: String,
     val enableNetworkLogs: Boolean,
-    val enableDebutLogs: Boolean
+    val enableDebugLogs: Boolean
 )

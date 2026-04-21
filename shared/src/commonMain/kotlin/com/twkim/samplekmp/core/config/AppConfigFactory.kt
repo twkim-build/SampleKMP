@@ -7,19 +7,19 @@ object AppConfigFactory {
                 environment = environment,
                 baseUrl = "https://dev-api.example.com",
                 enableNetworkLogs = true,
-                enableDebutLogs = true
+                enableDebugLogs = true
             )
             AppEnvironment.STAGING -> AppConfig (
                 environment = environment,
                 baseUrl = "https://staging-api.example.com",
                 enableNetworkLogs = true,
-                enableDebutLogs = true
+                enableDebugLogs = true
             )
             AppEnvironment.PROD -> AppConfig (
                 environment = environment,
                 baseUrl = "https://api.example.com",
                 enableNetworkLogs = false,
-                enableDebutLogs = false
+                enableDebugLogs = false
             )
         }
     }

@@ -1,5 +1,6 @@
 package com.twkim.samplekmp.core.network
 
+import com.twkim.samplekmp.auth.domain.SessionManager
 import com.twkim.samplekmp.core.config.AppConfig
 import com.twkim.samplekmp.core.logging.AppLogger
 import io.ktor.client.HttpClient
