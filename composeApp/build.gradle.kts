@@ -18,6 +18,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
+            implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)

@@ -6,15 +6,30 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.twkim.samplekmp.ui.RootScreen
+import com.twkim.samplekmp.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
+    private val container = AndroidContainer()
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
         setContent {
-            _root_ide_package_.com.twkim.samplekmp.App()
+            AppTheme {
+                RootScreen(
+                    authStore = container.authStore,
+                    userStore = container.userStore
+                )
+            }
         }
+
+//        enableEdgeToEdge()
+//        super.onCreate(savedInstanceState)
+//
+//        setContent {
+//            _root_ide_package_.com.twkim.samplekmp.App()
+//        }
     }
 }
 
